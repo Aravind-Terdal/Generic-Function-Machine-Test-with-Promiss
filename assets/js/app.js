@@ -37,7 +37,7 @@ const templating = (arr) =>{
     let result = ''
     arr.forEach(ele => {
         result += `
-                    <div class="card md-3" id="${ele.id}">
+                    <div class="card mb-3" id="${ele.id}">
                     <div class="card-header">${ele.title}</div>
                     <div class="card-body">${ele.content}</div>
                     <div class="card-footer d-flex justify-content-between">
@@ -53,7 +53,7 @@ const templating = (arr) =>{
 
 const createCard = (obj,res)=>{
     let card = document.createElement('div');
-    card.classList.add("card", "md-3");
+    card.classList.add("card", "mb-3");
     card.id = res.name;
     cl(card);
     card.innerHTML = `
@@ -176,6 +176,7 @@ const onFormUpdate = () =>{
         cardChild[0].innerHTML = upDateObj.title
         cardChild[1].innerHTML = upDateObj.content
         snakBar("Post Updated Successfully", 'success');
+        upDateSubmitBtn()
     })
     .catch(err=>{
         snakBar(err,'error');
