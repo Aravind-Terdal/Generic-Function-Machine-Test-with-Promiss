@@ -55,7 +55,7 @@ const createCard = (obj,res)=>{
     let card = document.createElement('div');
     card.classList.add("card", "mb-3");
     card.id = res.name;
-    cl(card);
+    // cl(card);
     card.innerHTML = `
                         <div class="card-header">${obj.title}</div>
                     <div class="card-body">${obj.content}</div>
@@ -93,7 +93,7 @@ const fetchData = ()=>{
     makeApiCall("GET", POST_URL)
     .then(res =>{
         let data = Object.keys(res).map(e=>({...res[e],id:e}))
-        cl(data);
+        // cl(data);
         templating(data);
     })
     .catch(err=>{
@@ -138,10 +138,10 @@ const upDateSubmitBtn =(value)=>{
 const onEdit = (eve)=>{
     showLoader();
     let EDIT_ID = eve.closest('.card').id;
-    cl(EDIT_ID);
+    // cl(EDIT_ID);
     localStorage.setItem('edit_id', EDIT_ID)
     let EDIT_URL = `${BASE_URL}/posts/${EDIT_ID}.json`
-    cl(EDIT_URL);
+    // cl(EDIT_URL);
     makeApiCall("GET", EDIT_URL)
     .then(res=>{
         title.value = res.title;
