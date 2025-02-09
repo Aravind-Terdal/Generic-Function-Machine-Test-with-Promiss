@@ -206,7 +206,7 @@ const onRemove = (eve) =>{
       })
       .then((res)=>{
         document.getElementById(removeId).remove()
-        snakBar("Removed SuccessFully", "Success")
+        snakBar("Removed SuccessFully", "success")
       })
       .catch(err =>{
         snakBar(err,"error")
